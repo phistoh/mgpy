@@ -36,13 +36,7 @@ def truncate_string(s: str, length: int, ellipsis: str = "...") -> str:
     Returns:
         str: A truncated version of the string with given length (and ellipsis)
     """
-    if not isinstance(length, int):
-        length = len(s)
-    if not isinstance(ellipsis, str):
-        ellipsis = "..."
-    if not isinstance(s, str):
-        print(f"{s} is not a string.")
-    elif len(s) > length:
+    if len(s) > length:
         # if the shortened string including the ellipsis is too long, don't add an ellipsis
         if len(ellipsis) > length - len(ellipsis):
             ellipsis = ""
