@@ -1,26 +1,40 @@
-"""A personal module containing methods I use once in a while."""
+"""This module contains methods relating to strings."""
 
 from enum import StrEnum
 
 
 class Loglevel(StrEnum):
     """A string enum defining importance levels for usage in the 'log_print' method"""
-
     INFO = "Information"
+    """Used to indicate an informational output."""
     WARNING = "Warning"
+    """Used to indicate a warning."""
     ERROR = "ERROR"
+    """Used to indicate an error."""
 
 
 def log_print(s: str, level: Loglevel = Loglevel.INFO):
-    """Takes a string and outputs it with an additional prefix indicating importance."""
+    """Takes a string and outputs it with an additional prefix indicating importance.
+
+    Args:
+        s (str): The string which will be output
+        level (Loglevel, optional): The prefix indicating importance. Defaults to Loglevel.INFO.
+    """
     if level not in Loglevel._member_names_:
         level = Loglevel.INFO
     print(f"{level}: {s}")
 
 
 def truncate_string(s: str, length: int, ellipsis: str = "...") -> str:
-    """Takes a string, truncates it to {length - n} (where n is the lenght of the ellipsis) characters and adds an ellipsis (default is '...').
-    If the argument {s} is not a string, the method just returns the argument.
+    """Takes a string, truncates it to the given length, adding a given ellipsis.
+
+    Args:
+        s (str): The string which will be shortened.
+        length (int): The length of the shortened string including the length of the ellipsis.
+        ellipsis (str, optional): An optional ellipsis which will be appended. Defaults to "...".
+
+    Returns:
+        str: A truncated version of the string with given length (and ellipsis)
     """
     if not isinstance(length, int):
         length = len(s)
@@ -36,14 +50,23 @@ def truncate_string(s: str, length: int, ellipsis: str = "...") -> str:
     return s
 
 
-def insert_line_into_string(l, s, pos):
-    """Takes two strings and inserts the first one `l` into the second one `s` as a new line at position `pos`"""
+def insert_line_into_string(line: str, s: str, pos: int) -> str:
+    """Takes two strings and inserts the first one into the second one as a new line at the given position.
+
+    Args:
+        line (str): The line to insert.
+        s (str): The (potential multi-line) string in which to insert line.
+        pos (int): The line number of the newly inserted line in s. Uses Python's List.insert() position syntax---negative indices, e.g. -1, insert line *before* the last element.
+
+    Returns:
+        str: A new string containing line at the given line number.
+    """
     split_string = s.splitlines(keepends=True)
-    if "\n" not in l:
-        l += "\n"
+    if "\n" not in line:
+        line += "\n"
     if pos >= len(split_string):
-        l = "\n" + l
         if "\n" not in split_string[-1]:
-            l = l.rstrip("\n")
-    split_string.insert(pos, l)
+            line = "\n" + line
+            line = line.rstrip("\n")
+    split_string.insert(pos, line)
     return "".join(split_string)
