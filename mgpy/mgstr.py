@@ -51,7 +51,7 @@ def insert_line_into_string(line: str, s: str, pos: int) -> str:
     Args:
         line (str): The line to insert.
         s (str): The (potential multi-line) string in which to insert line.
-        pos (int): The line number of the newly inserted line. Uses Python's List.insert() position syntax—negative indices, e.g. -1, insert line *before* the last element.
+        pos (int): The line number of the newly inserted line. Uses Python's List.insert() position syntax—negative indices, e.g. -1, inserts line *before* the last element.
 
     Returns:
         str: A new string containing line at the given line number.
