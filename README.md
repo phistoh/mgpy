@@ -1,5 +1,5 @@
 # `mgpy` ("Magpie")
-[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) ![Tests](https://github.com/phistoh/mgpy/raw/main/docs/badges/tests.svg) ![Coverage](https://github.com/phistoh/mgpy/raw/main/docs/badges/coverage.svg)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Tests](https://github.com/phistoh/mgpy/raw/main/docs/badges/tests.svg)](https://docs.pytest.org/en/8.2.x/) [![Coverage](https://github.com/phistoh/mgpy/raw/main/docs/badges/coverage.svg)](https://pypi.org/project/pytest-cov/)
 
 
 A small package containing simple, useful methods I regularly use and don't want to manually copy into several projects.
@@ -7,7 +7,8 @@ A small package containing simple, useful methods I regularly use and don't want
 Contains the following modules:
 
 ## `mgstr` ("Magister")
-Contains methods relating to strings.
+<details>
+<summary>Contains methods relating to strings.</summary>
 
 ### <kbd>function</kbd> `log_print`
 
@@ -65,20 +66,25 @@ A string enum defining importance levels for usage in the 'log_print' method
 - `INFO = "Information"`: Used to indicate an informational output.
 - `WARNING = "Warning"`: Used to indicate a warning.
 - `ERROR = "ERROR"`: Used to indicate an error.
-
+</details>
 
 ## `mgcl` ("Magical")
-Contains methods to work with colors and convert between different representations.
+<details>
+<summary>Contains methods to work with colors and convert between different representations.</summary>
 
 *tbd.*
+</details>
 
 ## `mgnet` ("Magnet")
-Contains network related methods.
+<details>
+<summary>Contains network related methods.</summary>
 
 *tbd.*
+</details>
 
 ## `mgnum` ("Magnum")
-Contains methods relating to numbers and their representation.
+<details>
+<summary>Contains methods relating to numbers and their representation.</summary>
 
 ### <kbd>function</kbd> `generate_human_readable_number`
 
@@ -101,17 +107,21 @@ Takes a number and returns a 'human readable' string. E.g., `1500000` → `1.5M`
 **Returns:**
 
  - **`str`**:  The human readable string.
-
+</details>
 
 ## `mgte` ("Mogote")
-Contains methods to work with time and date.
+<details>
+<summary>Contains methods to work with time and date.</summary>
 
 *tbd.*
+</details>
 
 ## `mgmin` ("Megumin")
-Contains methods which don't fall into the other categories.
+<details>
+<summary>Contains methods which don't fall into the other categories.</summary>
 
 *tbd.*
+</details>
 
 ---
 
