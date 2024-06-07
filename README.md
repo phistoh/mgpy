@@ -10,7 +10,7 @@ Contains the following modules:
 <details>
 <summary>Contains methods relating to strings.</summary>
 
-### <kbd>function</kbd> `log_print`
+### *function* `log_print`
 
 ```python
 log_print(s: str, level: Loglevel = <Loglevel.INFO: 'Information'>)
@@ -23,7 +23,7 @@ Takes a string and outputs it with an additional prefix indicating importance.
  - **`s`** (`str`):  The string which will be output
  - **`level`** (`Loglevel`, optional):  The prefix indicating importance. Defaults to `Loglevel.INFO`.
 
-### <kbd>function</kbd> `truncate_string`
+### *function* `truncate_string`
 
 ```python
 truncate_string(s: str, length: int, ellipsis: str = '...') → str
@@ -41,7 +41,7 @@ Takes a string, truncates it to the given length, adding a given ellipsis.
 
  - **`str`**:  A truncated version of the string with given length (and ellipsis)
 
-### <kbd>function</kbd> `insert_line_into_string`
+### *function* `insert_line_into_string`
 
 ```python
 insert_line_into_string(line: str, s: str, pos: int) → str
@@ -59,7 +59,7 @@ Takes two strings and inserts the first one into the second one as a new line at
 
  - **`str`**:  A new string containing line at the given line number.
 
-### <kbd>class</kbd> `Loglevel`
+### *class* `Loglevel`
 A string enum defining importance levels for usage in the 'log_print' method
 
 **Members:**
@@ -86,7 +86,7 @@ A string enum defining importance levels for usage in the 'log_print' method
 <details>
 <summary>Contains methods relating to numbers and their representation.</summary>
 
-### <kbd>function</kbd> `generate_human_readable_number`
+### *function* `generate_human_readable_number`
 
 ```python
 generate_human_readable_number(
