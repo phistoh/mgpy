@@ -5,6 +5,7 @@ from enum import StrEnum
 
 class Loglevel(StrEnum):
     """A string enum defining importance levels for usage in the 'log_print' method"""
+
     INFO = "Information"
     """Used to indicate an informational output."""
     WARNING = "Warning"
@@ -20,7 +21,7 @@ def log_print(s: str, level: Loglevel = Loglevel.INFO):
         s (str): The string which will be output
         level (Loglevel, optional): The prefix indicating importance. Defaults to Loglevel.INFO.
     """
-    if level not in Loglevel._member_names_: # pylint: disable=E1101,W0212
+    if level not in Loglevel._member_names_:  # pylint: disable=E1101,W0212
         level = Loglevel.INFO
     print(f"{level}: {s}")
 

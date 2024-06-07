@@ -11,7 +11,7 @@ version = "0.1.0"
 authors = [
   { name="Moritz", email="phis@mogobb.de" },
 ]
-description = "A small package containing simple, useful methods I regularly use and don't want to manually copy into several projects."
+description = "A small package containing simple, useful methods I regularly use and don't want to manually copy into several projects. Most methods are probably to be found in other modules."
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [

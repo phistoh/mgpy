@@ -1,5 +1,5 @@
 # mgpy ("Magpie") | `mg_python`
-[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) ![Tests](docs/badges/tests.svg) ![Coverage](docs/badges/coverage.svg)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) ![Tests](https://github.com/phistoh/mgpy/raw/main/docs/badges/tests.svg) ![Coverage](https://github.com/phistoh/mgpy/raw/main/docs/badges/coverage.svg)
 
 
 A small package containing simple, useful methods I regularly use and don't want to manually copy into several projects.
