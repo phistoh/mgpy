@@ -1,4 +1,4 @@
-name: Package and release
+name: "TestPyPi: Package and release"
 
 # run workflow on tags starting with v
 on:
