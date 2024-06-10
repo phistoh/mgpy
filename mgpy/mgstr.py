@@ -1,5 +1,6 @@
 """This module contains methods relating to strings."""
 
+import time
 from enum import StrEnum
 
 
@@ -14,16 +15,23 @@ class Loglevel(StrEnum):
     """Used to indicate an error."""
 
 
-def log_print(s: str, level: Loglevel = Loglevel.INFO):
+def log_print(s: str, level: Loglevel = Loglevel.INFO, time_format: str = "%Y-%m-%d %H:%M:%S"):
     """Takes a string and outputs it with an additional prefix indicating importance.
 
     Args:
         s (str): The string which will be output
         level (Loglevel, optional): The prefix indicating importance. Defaults to Loglevel.INFO.
+        time_format (str, optional): A (C-time adherent) string to format the time. Defaults to '%Y-%m-%d %H:%M:%S'
     """
     if level not in Loglevel._member_names_:  # pylint: disable=E1101,W0212
         level = Loglevel.INFO
-    print(f"{level}: {s}")
+
+    if time_format is not None and time_format != '':
+        time_tuple = time.localtime()
+        time_string = time.strftime(time_format, time_tuple)
+        print(f"[{time_string}]\t[{level}]\t{s}")
+    else:
+        print(f"[{level}]\t{s}")
 
 
 def truncate_string(s: str, length: int, ellipsis: str = "...") -> str:

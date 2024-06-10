@@ -1,5 +1,6 @@
 import io
 import sys
+import time
 
 from mgpy import mgstr
 
@@ -11,19 +12,21 @@ def test_log_print():
     sys.stdout = captured_output
     mgstr.log_print(hello_world)
     sys.stdout = sys.__stdout__
+    time_tuple = time.localtime()
+    time_string = time.strftime("%Y-%m-%d %H:%M:%S", time_tuple)
 
-    assert f"Information: {hello_world}\n" == captured_output.getvalue()
+    assert f"[{time_string}]\t[Information]\t{hello_world}\n" == captured_output.getvalue()
 
 
-def test_log_print_with_loglevel_error():
+def test_log_print_with_loglevel_error_and_no_time_format():
     hello_world = "Hello, world!"
 
     captured_output = io.StringIO()
     sys.stdout = captured_output
-    mgstr.log_print(hello_world, mgstr.Loglevel.ERROR)
+    mgstr.log_print(hello_world, mgstr.Loglevel.ERROR, None)
     sys.stdout = sys.__stdout__
 
-    assert f"ERROR: {hello_world}\n" == captured_output.getvalue()
+    assert f"[ERROR]\t{hello_world}\n" == captured_output.getvalue()
 
 
 def test_log_print_with_invalid_loglevel():
@@ -33,8 +36,10 @@ def test_log_print_with_invalid_loglevel():
     sys.stdout = captured_output
     mgstr.log_print(hello_world, [])
     sys.stdout = sys.__stdout__
+    time_tuple = time.localtime()
+    time_string = time.strftime("%Y-%m-%d %H:%M:%S", time_tuple)
 
-    assert f"Information: {hello_world}\n" == captured_output.getvalue()
+    assert f"[{time_string}]\t[Information]\t{hello_world}\n" == captured_output.getvalue()
 
 
 def test_truncate_string():

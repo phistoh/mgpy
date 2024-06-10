@@ -1,5 +1,5 @@
 # `mgpy` ("Magpie")
-[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Tests](https://github.com/phistoh/mgpy/raw/main/docs/badges/tests.svg)](https://docs.pytest.org/en/8.2.x/) [![Coverage](https://github.com/phistoh/mgpy/raw/main/docs/badges/coverage.svg)](https://pypi.org/project/pytest-cov/)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Tests](https://github.com/phistoh/mgpy/raw/main/docs/badges/tests.svg)](https://docs.pytest.org/en/8.2.x/) [![Coverage](https://github.com/phistoh/mgpy/raw/main/docs/badges/coverage.svg)](https://github.com/pytest-dev/pytest-cov)
 
 
 A small package containing simple, useful methods I regularly use and don't want to manually copy into several projects.
@@ -13,7 +13,7 @@ Contains the following modules:
 ### *function* `log_print`
 
 ```python
-log_print(s: str, level: Loglevel = <Loglevel.INFO: 'Information'>)
+log_print(s: str, level: Loglevel = Loglevel.INFO, time_format: str = "%Y-%m-%d %H:%M:%S")
 ```
 
 Takes a string and outputs it with an additional prefix indicating importance.
@@ -22,6 +22,7 @@ Takes a string and outputs it with an additional prefix indicating importance.
 
  - **`s`** (`str`):  The string which will be output
  - **`level`** (`Loglevel`, optional):  The prefix indicating importance. Defaults to `Loglevel.INFO`.
+ - **`time_format`** (`str`, optional): A (C-time adherent) string to format the time. Defaults to `%Y-%m-%d %H:%M:%S`
 
 ### *function* `truncate_string`
 

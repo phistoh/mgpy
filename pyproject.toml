@@ -5,9 +5,16 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["mgpy"]
 
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "docs/badges",
+  ".vscode/",
+  ".github/",
+]
+
 [project]
 name = "mgpy"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
   { name="Moritz", email="phis@mogobb.de" },
 ]
