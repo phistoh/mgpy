@@ -74,3 +74,23 @@ def insert_line_into_string(line: str, s: str, pos: int) -> str:
             line = line.rstrip("\n")
     split_string.insert(pos, line)
     return "".join(split_string)
+
+def join_strings(*args: any, separator: str = ", ") -> str:
+    """Takes multiple strings and an optional separator element and joins them to a single string.
+        Each non-string argument will be ignored.
+
+    Args:
+        *args (any): Multiple arguments of any type. Only strings will be joined.
+            Arguments of other types will be ignored.
+        separator (str, optional): The separator element which will be put between all arguments.
+            Defaults to ", ".
+
+    Returns:
+        str: A combination of all originally given strings, separated by separator.
+    """
+    strings_to_join = [arg for arg in args if isinstance(arg, str)]
+
+    if not isinstance(separator, str):
+        separator = ", "
+
+    return separator.join(strings_to_join)

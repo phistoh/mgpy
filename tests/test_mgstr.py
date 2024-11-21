@@ -106,3 +106,50 @@ def test_insert_line_into_string_with_negative_position():
     extended_string = mgstr.insert_line_into_string(line_to_insert, multi_line_string, -1)
 
     assert extended_string == "line 1\n" "line 2\n" "a new line\n" "line 3\n"
+
+def test_join_strings():
+    a = "a"
+    b = "b"
+    c = "c"
+
+    list_of_strings = mgstr.join_strings(a, b, c)
+
+    assert list_of_strings == "a, b, c"
+
+def test_join_single_string_with_separator():
+    a = "a"
+    separator = "-"
+
+    list_of_strings = mgstr.join_strings(a, separator=separator)
+
+    assert list_of_strings == "a"
+
+def test_join_strings_with_separator():
+    a = "a"
+    b = "b"
+    c = "c"
+    separator = " | "
+
+    list_of_strings = mgstr.join_strings(a, b, c, separator = separator)
+
+    assert list_of_strings == "a | b | c"
+
+def test_join_strings_with_invalid_separator():
+    a = "a"
+    b = "b"
+    c = "c"
+    separator = []
+
+    list_of_strings = mgstr.join_strings(a, b, c, separator = separator)
+
+    assert list_of_strings == "a, b, c"
+
+def test_join_strings_with_elements_to_join():
+    a = "a"
+    b = "b"
+    l = []
+    one = 1
+
+    list_of_strings = mgstr.join_strings(a, b, l, one)
+
+    assert list_of_strings == "a, b"
